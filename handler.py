@@ -28,7 +28,7 @@ class Handler:
         user_id = message.from_user.id
         user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
         user_markup.row('Молдова')
-        user_markup.row('Польща')
+        user_markup.row('Польша')
         user_markup.row('Румыния')
         user_markup.row('Венгрия')
         user_markup.row('Словакия')
@@ -48,7 +48,7 @@ class Handler:
         if message.text == 'Молдова':
             reply_text = controller.get_country_data('moldova')
             self.bot.send_message(user_id, reply_text, reply_markup=user_markup)
-        elif message.text == 'Польща':
+        elif message.text == 'Польша':
             reply_text = controller.get_country_data('poland')
             self.bot.send_message(user_id, reply_text, reply_markup=user_markup)
         elif message.text == 'Румыния':

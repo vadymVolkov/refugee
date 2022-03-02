@@ -11,3 +11,11 @@ env.bak/
 venv.bak/
 
 *.ini
+.idea/.gitignore
+.idea/dataSources.xml
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/refugee.iml
+.idea/sqldialects.xml
+.idea/vcs.xml
