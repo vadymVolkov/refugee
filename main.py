@@ -16,17 +16,33 @@ handler = Handler(bot)
 def handle_text(message):
     handler.main_menu(message)
 
+
 @bot.message_handler(
     func=lambda mess: "В главное меню" == mess.text,
     content_types=['text'])
 def handle_text(message):
     handler.main_menu(message)
 
+
 @bot.message_handler(
     func=lambda mess: "Информация по пересечению границы" == mess.text,
     content_types=['text'])
 def handle_text(message):
     handler.border_crossing(message)
+
+
+@bot.message_handler(
+    func=lambda mess: "Информация для тех кто потерялся или кого-то потерял" == mess.text,
+    content_types=['text'])
+def handle_text(message):
+    handler.lost(message)
+
+
+@bot.message_handler(
+    func=lambda mess: "Полезная информация от Международного Штаба помощи украинцам" == mess.text,
+    content_types=['text'])
+def handle_text(message):
+    handler.usefull_info(message)
 
 
 bot.polling(none_stop=True, interval=0)
