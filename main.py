@@ -3,6 +3,8 @@ import telebot
 import controller
 from handler import Handler
 
+telebot.apihelper.SESSION_TIME_TO_LIVE = 5 * 60
+
 config = configparser.ConfigParser()
 config.read("config.ini")
 
@@ -10,6 +12,7 @@ API_TOKEN = config['main']['api_token']
 
 bot = telebot.TeleBot(API_TOKEN)
 handler = Handler(bot)
+
 
 
 @bot.message_handler(commands=['start'])
