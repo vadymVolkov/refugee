@@ -19,6 +19,7 @@ class Handler:
             user_markup.row('Информация по пересечению границы')
             user_markup.row('Информация для тех кто потерялся или кого-то потерял')
             user_markup.row('Полезная информация от Международного Штаба помощи украинцам')
+            user_markup.row('Полезные ссылки')
             user_markup.row('В главное меню')
             self.bot.send_message(user_id, 'Выберите какую информацию вы бы хотели получить', reply_markup=user_markup)
 
@@ -88,3 +89,11 @@ class Handler:
         user_markup.row('В главное меню')
         reply_text = controller.get_country_data('info')
         self.bot.send_message(user_id, reply_text, reply_markup=user_markup)
+
+    def usefull_links(self, message):
+        user_id = message.from_user.id
+        user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
+        user_markup.row('В главное меню')
+        reply_text = controller.get_country_data('links')
+        self.bot.send_message(user_id, reply_text, reply_markup=user_markup)
+        pass

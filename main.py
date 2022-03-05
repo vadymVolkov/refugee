@@ -14,7 +14,6 @@ bot = telebot.TeleBot(API_TOKEN)
 handler = Handler(bot)
 
 
-
 @bot.message_handler(commands=['start'])
 def handle_text(message):
     handler.main_menu(message)
@@ -46,6 +45,13 @@ def handle_text(message):
     content_types=['text'])
 def handle_text(message):
     handler.usefull_info(message)
+
+
+@bot.message_handler(
+    func=lambda mess: "Полезные ссылки" == mess.text,
+    content_types=['text'])
+def handle_text(message):
+    handler.usefull_links(message)
 
 
 bot.polling(none_stop=True, interval=0)
