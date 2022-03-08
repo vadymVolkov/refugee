@@ -37,6 +37,12 @@ class Handler:
         user_markup.row('Словакия')
         user_markup.row('Испания')
         user_markup.row('Австрия')
+        user_markup.row('Бельгия')
+        user_markup.row('Швейцария')
+        user_markup.row('Франция')
+        user_markup.row('Германия')
+        user_markup.row('Украина')
+        user_markup.row('Швеция')
         user_markup.row('В главное меню')
         msg = self.bot.send_message(user_id,
                                     'Выберите в списке какую '
@@ -68,6 +74,24 @@ class Handler:
             self.bot.send_message(user_id, reply_text, reply_markup=user_markup)
         elif message.text == 'Австрия':
             reply_text = controller.get_country_data('austria')
+            self.bot.send_message(user_id, reply_text, reply_markup=user_markup)
+        elif message.text == 'Швейцария':
+            reply_text = controller.get_country_data('swiss')
+            self.bot.send_message(user_id, reply_text, reply_markup=user_markup)
+        elif message.text == 'Бельгия':
+            reply_text = controller.get_country_data('belgium')
+            self.bot.send_message(user_id, reply_text, reply_markup=user_markup)
+        elif message.text == 'Франция':
+            reply_text = controller.get_country_data('france')
+            self.bot.send_message(user_id, reply_text, reply_markup=user_markup)
+        elif message.text == 'Германия':
+            reply_text = controller.get_country_data('german')
+            self.bot.send_message(user_id, reply_text, reply_markup=user_markup)
+        elif message.text == 'Украина':
+            reply_text = controller.get_country_data('ukraine')
+            self.bot.send_message(user_id, reply_text, reply_markup=user_markup)
+        elif message.text == 'Швеция':
+            reply_text = controller.get_country_data('sweden')
             self.bot.send_message(user_id, reply_text, reply_markup=user_markup)
         elif message.text == 'В главное меню':
             self.main_menu(message)
