@@ -59,5 +59,6 @@ def handle_text(message):
 def handle_text(message):
     handler.border_crossing(message)
 
+bot.remove_webhook()
 
 bot.polling(none_stop=True, interval=0)
