@@ -12,7 +12,7 @@ API_TOKEN = config['main']['api_token']
 
 
 
-WEBHOOK_HOST = '3.80.107.93'
+WEBHOOK_HOST = '127.0.0.0'
 WEBHOOK_PORT = 8443  # 443, 80, 88 or 8443 (port need to be 'open')
 WEBHOOK_LISTEN = '10.0.0.92'  # In some VPS you may need to put here the IP addr
 
