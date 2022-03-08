@@ -44,14 +44,14 @@ def handle_text(message):
     func=lambda mess: "Полезная информация от Международного Штаба помощи украинцам" == mess.text,
     content_types=['text'])
 def handle_text(message):
-    handler.usefull_info(message)
+    handler.usefull_info_ihhu(message)
 
 
 @bot.message_handler(
-    func=lambda mess: "Полезные ссылки" == mess.text,
+    func=lambda mess: "Полезная информация" == mess.text,
     content_types=['text'])
 def handle_text(message):
-    handler.usefull_links(message)
+    handler.usefull_info(message)
 
 
 bot.polling(none_stop=True, interval=0)
