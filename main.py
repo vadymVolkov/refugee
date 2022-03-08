@@ -1,7 +1,7 @@
 import configparser
 import telebot
-import controller
 from handler import Handler
+import logging
 
 telebot.apihelper.SESSION_TIME_TO_LIVE = 5 * 60
 
@@ -9,6 +9,9 @@ config = configparser.ConfigParser()
 config.read("config.ini")
 
 API_TOKEN = config['main']['api_token']
+
+logger = telebot.logger
+telebot.logger.setLevel(logging.INFO)
 
 bot = telebot.TeleBot(API_TOKEN)
 handler = Handler(bot)
