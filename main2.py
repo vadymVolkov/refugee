@@ -48,9 +48,12 @@ def process_webhook(update: dict):
     else:
         return
 
-@bot.message_handler(commands=['start'])
-def handle_text(message):
-    handler.main_menu(message)
+# Handle '/start' and '/help'
+@bot.message_handler(commands=['help', 'start'])
+def send_welcome(message):
+    bot.reply_to(message,
+                 ("Hi there, I am EchoBot.\n"
+                  "I am here to echo your kind words back to you."))
 
 
 @bot.message_handler(
