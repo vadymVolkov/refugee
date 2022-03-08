@@ -54,6 +54,7 @@ class Handler:
         user_id = message.from_user.id
         user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
         user_markup.row('В главное меню')
+        user_markup.row('Вернуться к списку стран')
         if message.text == 'Молдова':
             reply_text = controller.get_country_data('moldova')
             self.bot.send_message(user_id, reply_text, reply_markup=user_markup)

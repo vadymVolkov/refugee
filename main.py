@@ -53,5 +53,11 @@ def handle_text(message):
 def handle_text(message):
     handler.usefull_info(message)
 
+@bot.message_handler(
+    func=lambda mess: "Вернуться к списку стран" == mess.text,
+    content_types=['text'])
+def handle_text(message):
+    handler.border_crossing(message)
+
 
 bot.polling(none_stop=True, interval=0)
