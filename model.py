@@ -2,7 +2,7 @@ import sqlite3
 
 
 def get_user_byid(user_id):
-    connection = sqlite3.connect("db.db")
+    connection = sqlite3.connect("./db.db")
     cursor = connection.cursor()
     sql = "select * from users where user_id = ?"
     cursor.execute(sql, (user_id,))

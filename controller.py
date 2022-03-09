@@ -25,7 +25,7 @@ def add_user_city(message, city):
 
 
 def get_country_data(country_name):
-    file_name = country_name + ".txt"
+    file_name = './' + country_name + ".txt"
     data = codecs.open(file_name, 'r', 'utf-8')
     data_text = data.read()
     return data_text
